@@ -15,9 +15,15 @@ $arrName = [];
 $reverseName = '';
 
 #字符转数组
-for ($i=0,$len=strlen($name); $i<$len; $i++){
+/*for ($i=0,$len=strlen($name); $i<$len; $i++){
     $arrName[] = $name[$i];
-}
+}*/
+
+
+#更新
+$arrName = str_split($name);
+
+
 
 #翻转
 while (count($arrName) > 0){
