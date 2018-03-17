@@ -23,16 +23,20 @@ $items = array(
 function arraySort($array){
     $result = [];
 
-    $len = strlen('http://www.abc.com/a');
+    /*$len = strlen('http://www.abc.com/a');
 
     #处理数组
     array_walk($array,function(&$value,$index,$len){
         $_index = strpos($value[0],'/',$len) +1;
         $value[0] = substr($value[0],0, $_index);
-    },$len);
+    },$len);*/
+
 
     #处理数据
     foreach ($array as $key => $value){
+
+        $_index = strrpos($value[0],'/');
+        $value[0] = substr($value[0],0, $_index);
 
         if(isset($result[$value[0]])){
             $result[$value[0]][1]  += $value[1];
